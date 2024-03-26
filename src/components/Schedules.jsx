@@ -18,7 +18,7 @@ const Schedules = ({ schedule, title }) => {
       <div className="flex items-center justify-between mb-3">
         <p className="text-lg font-bold text-black">{title}</p>
         <Link
-          href={`topTranding`}
+          href={`schedules`}
           className="font-semibold text-blue-700 hover:text-blue-800 transition-all"
         >
           Lihat Semua
@@ -38,8 +38,8 @@ const Schedules = ({ schedule, title }) => {
         }}
         className="mySwiper"
       >
-        {schedule.map((value) => (
-          <SwiperSlide key={value.mal_id}>
+        {schedule?.data?.map((value, idx) => (
+          <SwiperSlide key={idx}>
             <Link
               href={`/detailAnime/${value.mal_id}`}
               className="card bg-base-100 shadow-xl h-80 overflow-hidden md:h-96"

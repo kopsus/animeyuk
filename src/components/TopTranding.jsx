@@ -39,8 +39,8 @@ const TopTranding = ({ topAnime, title }) => {
           }}
           className="mySwiper"
         >
-          {topAnime.map((value) => (
-            <SwiperSlide key={value.mal_id}>
+          {topAnime?.data.map((value, idx) => (
+            <SwiperSlide key={idx}>
               <Link
                 href={`/detailAnime/${value.mal_id}`}
                 className="card bg-base-100 shadow-xl h-80 overflow-hidden md:h-96"

@@ -7,10 +7,10 @@ const AnimeRecommend = ({ limitData, title }) => {
     <>
       <p className="text-lg font-bold text-black">{title}</p>
       <div className="grid grid-cols-2 gap-3 pb-10 pt-5 md:grid-cols-3 lg:grid-cols-5">
-        {limitData.map((value) => (
+        {limitData?.data.map((value, idx) => (
           <Link
             href={`/detailAnime/${value.mal_id}`}
-            key={value.mal_id}
+            key={idx}
             className="card bg-base-100 shadow-xl h-80 overflow-hidden md:h-96"
           >
             <figure className="overflow-hidden h-full relative group cursor-pointer">

@@ -6,15 +6,15 @@ import NotFound from "@/app/not-found"
 const AnimeSearch = ({ animeSearch, decodedId }) => {
   return (
     <>
-      <p className="text-lg text-black font-bold mb-3 px-5 pt-10 md:px-10">
+      <p className="text-lg text-black font-bold mb-3 px-5 pt-28 md:px-10">
         Pencarian untuk {decodedId}
       </p>
-      {animeSearch.length > 0 ? (
+      {animeSearch?.data.length > 0 ? (
         <div className="grid grid-cols-2 gap-3 px-3 pb-10 md:px-10 md:grid-cols-3 lg:grid-cols-5">
-          {animeSearch.map((value) => (
+          {animeSearch?.data.map((value, idx) => (
             <Link
               href={`/detailAnime/${value.mal_id}`}
-              key={value.mal_id}
+              key={idx}
               className="card bg-base-100 shadow-xl h-80 overflow-hidden md:h-96"
             >
               <figure className="overflow-hidden h-full relative group cursor-pointer">

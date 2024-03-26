@@ -1,10 +1,7 @@
 import React from "react"
 import Image from "next/image"
-import Link from "next/link"
 import YouTube from "react-youtube"
 
-// assets
-import { IoMdArrowRoundBack } from "react-icons/io"
 import { ImBoxAdd } from "react-icons/im"
 import {
   RiWhatsappFill,
@@ -12,6 +9,7 @@ import {
   RiTwitterXFill,
 } from "react-icons/ri"
 import { useState } from "react"
+import Back from "./Button/Back"
 
 const DetailAnime = ({ dataAnime }) => {
   const [isOpen, setIsOpen] = useState(false)
@@ -31,20 +29,15 @@ const DetailAnime = ({ dataAnime }) => {
   return (
     <>
       <div className="px-5 pt-24 bg-[#1E1D2E] md:px-10">
-        <Link href={"/"} className="flex items-center gap-3">
-          <div className="bg-white p-2 rounded-full ">
-            <IoMdArrowRoundBack />
-          </div>
-          <p className="text-white">Back</p>
-        </Link>
+        <Back />
         <div
-          key={dataAnime?.mal_id}
+          key={dataAnime?.data?.mal_id}
           className="flex flex-col py-10 md:flex-row lg:px-10 lg:gap-10"
         >
           <div className="mb-3 md:mb-0 md:flex-1 lg:flex-[0.5]">
             <div className="overflow-hidden mx-5 h-auto lg:mx-auto">
               <Image
-                src={dataAnime?.images?.webp?.large_image_url}
+                src={dataAnime?.data?.images?.webp?.large_image_url}
                 alt="image anime"
                 width={1000}
                 height={1000}
@@ -59,24 +52,26 @@ const DetailAnime = ({ dataAnime }) => {
           </div>
           <div className="md:flex-1">
             <div className="text-white flex flex-col gap-2">
-              <p className="text-lg font-bold">{dataAnime?.title}</p>
+              <p className="text-lg font-bold">{dataAnime?.data?.title}</p>
               <div className="flex items-baseline gap-3 font-semibold mb-2">
                 <div>
                   <p>Rank</p>
                   <p>Year</p>
                   <p>Episode</p>
                   <p>Duration</p>
+                  <p>Status</p>
                 </div>
                 <div>
-                  <p>: {dataAnime?.rank}</p>
-                  <p>: {dataAnime?.year}</p>
-                  <p>: {dataAnime?.episodes}</p>
-                  <p>: {dataAnime?.duration}</p>
+                  <p>: {dataAnime?.data?.rank}</p>
+                  <p>: {dataAnime?.data?.year}</p>
+                  <p>: {dataAnime?.data?.episodes}</p>
+                  <p>: {dataAnime?.data?.duration}</p>
+                  <p>: {dataAnime?.data?.status}</p>
                 </div>
               </div>
             </div>
             <p className="pb-5 border-b border-white text-white">
-              {dataAnime?.synopsis}
+              {dataAnime?.data?.synopsis}
             </p>
             <div className="pt-5 pb-10">
               <p className="text-white mb-2">Share</p>
@@ -101,7 +96,10 @@ const DetailAnime = ({ dataAnime }) => {
               >
                 x
               </button>
-              <YouTube videoId={dataAnime?.trailer?.youtube_id} opts={opts} />
+              <YouTube
+                videoId={dataAnime?.data?.trailer?.youtube_id}
+                opts={opts}
+              />
             </>
           )}
         </div>

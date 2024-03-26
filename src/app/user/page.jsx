@@ -1,8 +1,12 @@
 import React from "react"
 import Image from "next/image"
-import Link from "next/link"
 import { authGithub } from "@/libs/auth-libs"
-import { redirect } from "next/navigation"
+// import { redirect } from "next/navigation"
+import Link from "next/link"
+
+// components
+import SignOut from "@/components/Button/SignOut"
+
 const page = async () => {
   const user = await authGithub()
 
@@ -19,12 +23,18 @@ const page = async () => {
       />
       <p>Welcome {user?.name}</p>
       <p>{user?.email}</p>
-      <Link
-        href={"api/auth/signout"}
-        className="btn rounded-lg border bg-black border-white text-white transition-all cursor-pointer hover:bg-white hover:text-black hover:border-black hover:scale-105"
-      >
-        Sign Out
-      </Link>
+      <div className="flex gap-5 mb-10">
+        <Link
+          href={"user/collection"}
+          className="btn bg-primary text-white hover:bg-blue-700 hover:scale-105 transition-all"
+        >
+          My Collection
+        </Link>
+        <button className="btn bg-primary text-white hover:bg-blue-700 hover:scale-105 transition-all">
+          My Comment
+        </button>
+      </div>
+      <SignOut />
     </div>
   )
 }

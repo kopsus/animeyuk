@@ -1,6 +1,6 @@
 "use client"
 
-import { getPopularAnime } from "@/libs/api-libs"
+import { getAnimeResponse } from "@/libs/api-libs"
 import DetailAnime from "@/components/DetailAnime"
 
 import Rating from "@/components/Rating"
@@ -10,7 +10,7 @@ const Page = ({ params: { id } }) => {
   const [dataAnime, setDataAnime] = useState(null)
 
   const fetcData = async () => {
-    const detailAnime = await getPopularAnime(`anime/${id}`, "")
+    const detailAnime = await getAnimeResponse(`anime/${id}`, "")
     setDataAnime(detailAnime)
   }
 

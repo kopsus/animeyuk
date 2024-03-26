@@ -1,10 +1,9 @@
-// import { Fragment } from "react"
 import Image from "next/image"
 import Link from "next/link"
 
 // assets
 import Logo from "@/../public/Logo.png"
-import FormLogin from "./FormLogin"
+import FormLogin from "./form/FormLogin"
 import InputSearch from "./InputSearch"
 import Auth from "./Auth"
 
@@ -20,16 +19,12 @@ const Navbar = () => {
           <div className="hidden lg:block">
             <InputSearch />
           </div>
-          <div>
-            <Auth />
-            {/* <label
-              htmlFor="openFormLogin"
-              className="btn rounded-lg border bg-black border-white text-white hover:bg-white hover:text-black transition-all cursor-pointer"
-            >
-              Login
-            </label> */}
-          </div>
-          <FormLogin openFormLogin={"openFormLogin"} />
+          <Link
+            href={"login"}
+            className="btn rounded-lg border bg-black border-white text-white hover:bg-white hover:text-black transition-all cursor-pointer"
+          >
+            Login
+          </Link>
         </div>
       </div>
     </>

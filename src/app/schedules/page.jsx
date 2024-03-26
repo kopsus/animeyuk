@@ -1,18 +1,19 @@
 "use client"
 
-import React from "react"
-import { getAnimeResponse } from "@/libs/api-libs"
-import { useEffect, useState } from "react"
-import Image from "next/image"
+import React, { useEffect, useState } from "react"
 import Link from "next/link"
+import Image from "next/image"
 
-const TopAnime = () => {
-  const [topTranding, setTopTranding] = useState([])
+// api
+import { getAnimeResponse } from "@/libs/api-libs"
+
+const page = () => {
+  const [schedule, setSchedule] = useState([])
   const [currentPage, setCurrentPage] = useState(1)
 
   const fetchData = async () => {
-    const dataAnime = await getAnimeResponse("top/anime", `page=${currentPage}`)
-    setTopTranding(dataAnime)
+    const dataAnime = await getAnimeResponse("schedules", `page=${currentPage}`)
+    setSchedule(dataAnime)
   }
 
   useEffect(() => {
@@ -39,10 +40,10 @@ const TopAnime = () => {
   return (
     <div className="pt-28 px-3 md:px-10">
       <p className="text-lg text-black font-bold text-center">
-        TOP TRANDING page #{currentPage}
+        SCHEDULES page #{currentPage}
       </p>
       <div className="grid grid-cols-2 gap-2 py-10 md:grid-cols-3 lg:grid-cols-5">
-        {topTranding?.data?.map((value) => (
+        {schedule?.data?.map((value) => (
           <Link
             href={`/detailAnime/${value.mal_id}`}
             key={value.mal_id}
@@ -59,7 +60,7 @@ const TopAnime = () => {
               <div className="w-full h-full absolute transition-all opacity-0 group-hover:opacity-100">
                 <div className="bg-black bg-opacity-50 flex flex-col gap-1 text-white p-3 justify-end h-full">
                   <p className="font-semibold">{value.title}</p>
-                  <p className="text-sm">{value.duration}</p>
+                  <p className="text-sm">{value.status}</p>
                 </div>
               </div>
             </figure>
@@ -73,7 +74,7 @@ const TopAnime = () => {
         <div className="join-item flex items-center gap-3 font-semibold px-3 btn">
           <p>{currentPage}</p>
           <p>of</p>
-          <p>{topTranding?.pagination?.last_visible_page}</p>
+          <p>{schedule?.pagination?.last_visible_page}</p>
         </div>
         <button className="join-item btn" onClick={handleNextPage}>
           »
@@ -83,4 +84,4 @@ const TopAnime = () => {
   )
 }
 
-export default TopAnime
+export default page
