@@ -5,7 +5,7 @@ import Link from "next/link"
 import Image from "next/image"
 
 // api
-import { getAnimeResponse } from "@/libs/api-libs"
+import { getAnimeResponse } from "../../libs/api-libs"
 
 const page = () => {
   const [schedule, setSchedule] = useState([])

@@ -1,7 +1,7 @@
 "use client"
 
-import { getAnimeResponse } from "@/libs/api-libs"
-import DetailAnime from "@/components/DetailAnime"
+import { getAnimeResponse } from "../../../libs/api-libs.js"
+import DetailAnime from "../../../components/DetailAnime"
 
 import { useState, useEffect } from "react"
 

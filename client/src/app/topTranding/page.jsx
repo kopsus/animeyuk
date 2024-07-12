@@ -1,7 +1,7 @@
 "use client"
 
 import React from "react"
-import { getAnimeResponse } from "@/libs/api-libs"
+import { getAnimeResponse } from "../../libs/api-libs"
 import { useEffect, useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
