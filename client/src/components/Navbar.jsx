@@ -3,9 +3,7 @@ import Link from "next/link"
 
 // assets
 import Logo from "@/../public/Logo.png"
-import FormLogin from "./form/FormLogin"
 import InputSearch from "./InputSearch"
-import Auth from "./Auth"
 
 const Navbar = () => {
   return (
@@ -19,12 +17,6 @@ const Navbar = () => {
           <div className="hidden lg:block">
             <InputSearch />
           </div>
-          <Link
-            href={"login"}
-            className="btn rounded-lg border bg-black border-white text-white hover:bg-white hover:text-black transition-all cursor-pointer"
-          >
-            Login
-          </Link>
         </div>
       </div>
     </>

@@ -28,7 +28,7 @@ const InputSearch = () => {
   }
 
   return (
-    <div className="form-control relative w-11/12 mx-auto mt-5 lg:mt-0 lg:w-full">
+    <div className="form-control relative w-11/12 mx-auto mt-5 lg:mt-0 lg:w-full flex flex-row gap-3">
       <input
         type="text"
         placeholder="Search"
@@ -36,12 +36,16 @@ const InputSearch = () => {
         ref={ref}
         onKeyPress={handleKeyPress}
       />
-      <div
-        className="absolute right-3 top-3 cursor-pointer"
-        onClick={handleSearch}
-      >
+      <div className="absolute right-28 top-3 cursor-pointer">
         <CiSearch color="black" size={25} />
       </div>
+
+      <button
+        className="btn rounded-lg border bg-black border-white text-white hover:bg-white hover:text-black transition-all cursor-pointer"
+        onClick={handleSearch}
+      >
+        Search
+      </button>
     </div>
   )
 }

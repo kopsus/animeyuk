@@ -3,7 +3,6 @@
 import { getAnimeResponse } from "@/libs/api-libs"
 import DetailAnime from "@/components/DetailAnime"
 
-import Rating from "@/components/Rating"
 import { useState, useEffect } from "react"
 
 const Page = ({ params: { id } }) => {
@@ -21,7 +20,6 @@ const Page = ({ params: { id } }) => {
   return (
     <>
       <DetailAnime dataAnime={dataAnime} />
-      <Rating />
     </>
   )
 }

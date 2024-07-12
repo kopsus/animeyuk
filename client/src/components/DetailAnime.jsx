@@ -2,7 +2,6 @@ import React from "react"
 import Image from "next/image"
 import YouTube from "react-youtube"
 
-import { ImBoxAdd } from "react-icons/im"
 import {
   RiWhatsappFill,
   RiFacebookCircleFill,
@@ -42,12 +41,6 @@ const DetailAnime = ({ dataAnime }) => {
                 width={1000}
                 height={1000}
               />
-            </div>
-            <div className="flex">
-              <button className="btn bg-primary w-max border-0 text-white mx-auto hover:bg-blue-700 my-10">
-                <ImBoxAdd size={25} />
-                <p className=" text-sm">Add My Collection</p>
-              </button>
             </div>
           </div>
           <div className="md:flex-1">

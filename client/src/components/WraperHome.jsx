@@ -8,13 +8,10 @@ import InputSearch from "./InputSearch"
 const WraperHome = () => {
   return (
     <>
-      <div className="overflow-hidden h-[90vh] relative md:h-[90vh]">
+      <div className="overflow-hidden h-[90vh] relative md:h-[100vh]">
         <Image
-          // src={dataRandomAnime?.images?.webp?.large_image_url}
           src={BannerHome}
           alt="banner home"
-          width={10000}
-          height={10000}
           className="object-cover block w-full h-full"
         />
         <div className="bg-black bg-opacity-30 absolute w-full h-full top-0">
