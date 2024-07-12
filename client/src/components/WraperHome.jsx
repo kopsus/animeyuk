@@ -2,7 +2,7 @@ import React from "react"
 import Image from "next/image"
 
 // assets
-import BannerHome from "@/../public/Banner_Home.png"
+import BannerHome from "../../public/Banner_Home.png"
 import InputSearch from "./InputSearch"
 
 const WraperHome = () => {

@@ -1,15 +1,15 @@
 // components
-import AnimeRecommend from "@/components/AnimeRecommend"
-import Schedules from "@/components/Schedules"
-import TopTranding from "@/components/TopTranding"
-import WraperHome from "@/components/WraperHome"
+import AnimeRecommend from "../components/AnimeRecommend"
+import Schedules from "../components/Schedules"
+import TopTranding from "../components/TopTranding"
+import WraperHome from "../components/WraperHome"
 
 // api
 import {
   getAnimeResponse,
   getNestedAnimeResponse,
   reproduce,
-} from "@/libs/api-libs"
+} from "../libs/api-libs"
 
 export default async function Home() {
   const topAnime = await getAnimeResponse("top/anime", "")

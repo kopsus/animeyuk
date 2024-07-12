@@ -1,7 +1,7 @@
 import React from "react"
 import Image from "next/image"
 import Link from "next/link"
-import NotFound from "@/app/not-found"
+import NotFound from "../app/not-found"
 
 const AnimeSearch = ({ animeSearch, decodedId }) => {
   return (

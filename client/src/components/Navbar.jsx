@@ -2,7 +2,7 @@ import Image from "next/image"
 import Link from "next/link"
 
 // assets
-import Logo from "@/../public/Logo.png"
+import Logo from "../../public/Logo.png"
 import InputSearch from "./InputSearch"
 
 const Navbar = () => {
